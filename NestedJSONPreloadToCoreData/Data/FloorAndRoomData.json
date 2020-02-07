@@ -1,0 +1,80 @@
+[{
+    "name": "1",
+    "mapImage": "Path/to/imagemap",
+    "rooms":[
+        {
+            "name": "Entry",
+            "floor": "1",
+            "information": "Welcome to 1819",
+            "beaconMinorVal": "102321",
+            "beaconMajorVal": "123123",
+            "photos":[
+                {
+                    "path": "path/to/photo",
+                    "altText": "This is a photo of the 1819 entrance"
+                },
+                {
+                    "path": "path/to/photo",
+                    "altText": "This is a photo of the 1819 check-in desk"
+                }
+            ]
+        },
+        {
+            "name": "MarkerSpace",
+            "floor": "1",
+            "information": "This is the MarkerSpace. Here you can .....",
+            "beaconMinorVal": "102351",
+            "beaconMajorVal": "123253",
+            "photos":[
+                {
+                    "path": "path/to/photo",
+                    "altText": "This is a photo of the 1819 Markerspace"
+                },
+                {
+                    "path": "path/to/photo",
+                    "altText": "This is a photo of the Makerspace's 3D printers "
+                }
+            ]
+        }
+    ]
+},
+{
+    "name": "2",
+    "mapImage": "Path/to/imagemap",
+    "rooms":[
+        {
+            "name": "Room 1",
+            "floor": "2",
+            "information": ".....",
+            "beaconMinorVal": "",
+            "beaconMajorVal": "",
+            "photos":[
+                {
+                    "path": "path/to/photo",
+                    "altText": "This is a photo of the room 1"
+                },
+                {
+                    "path": "path/to/photo",
+                    "altText": "This is a photo of the room 1 partner logo"
+                }
+            ]
+        },
+        {
+            "name": "Room2",
+            "floor": "2",
+            "information": "This is Room 2. Here you can .....",
+            "beaconMinorVal": "",
+            "beaconMajorVal": "",
+            "photos":[
+                {
+                    "path": "path/to/photo",
+                    "altText": "This is a photo of the room 2"
+                },
+                {
+                    "path": "path/to/photo",
+                    "altText": "This is a photo of the room 2 partner logo "
+                }
+            ]
+        }
+    ]
+}]
