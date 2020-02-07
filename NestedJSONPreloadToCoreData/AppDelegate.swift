@@ -116,9 +116,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                 print(floor.name)
                                 print(floor.mapImage)
                                 for room in floor.rooms{
-                                    print(room)
+                                    print(room.name)
                                     for photo in room.photos!{
-                                        print(photo)
+                                        print(photo.altText)
                                     }
                                 }
                                 //let floorObject = FloorsMO(context: backgroundContext)
