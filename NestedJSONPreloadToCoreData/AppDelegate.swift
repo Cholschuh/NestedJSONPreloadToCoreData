@@ -113,7 +113,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         do {
                             floors = try JSONDecoder().decode([floor].self, from: data)
                             for floor in floors{
-                                print(floor)
+                                print(floor.name)
+                                print(floor.mapImage)
+                                for room in floor.rooms{
+                                    print(room)
+                                    for photo in room.photos!{
+                                        print(photo)
+                                    }
+                                }
                                 //let floorObject = FloorsMO(context: backgroundContext)
 //                                roomObject.name = room.name
 //                                roomObject.floor = room.floor
