@@ -99,8 +99,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             backgroundContext.perform {
                 var floors = [floor]()
-                var rooms = [room]()
-                var photos = [photo]()
+                //var rooms = [room]()
+                //var photos = [photo]()
                 let task = URLSession.shared.dataTask(with: dataURL) { (data, response, error) in
                     
                     if let error = error {
