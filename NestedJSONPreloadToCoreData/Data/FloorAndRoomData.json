@@ -4,7 +4,6 @@
     "rooms":[
         {
             "name": "Entry",
-            "floor": "1",
             "information": "Welcome to 1819",
             "beaconMinorVal": "102321",
             "beaconMajorVal": "123123",
@@ -21,7 +20,6 @@
         },
         {
             "name": "MarkerSpace",
-            "floor": "1",
             "information": "This is the MarkerSpace. Here you can .....",
             "beaconMinorVal": "102351",
             "beaconMajorVal": "123253",
@@ -44,7 +42,6 @@
     "rooms":[
         {
             "name": "Room 1",
-            "floor": "2",
             "information": ".....",
             "beaconMinorVal": "",
             "beaconMajorVal": "",
@@ -61,7 +58,6 @@
         },
         {
             "name": "Room2",
-            "floor": "2",
             "information": "This is Room 2. Here you can .....",
             "beaconMinorVal": "",
             "beaconMajorVal": "",

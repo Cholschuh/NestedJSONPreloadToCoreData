@@ -49,6 +49,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0515AAF623EE47050036DCED /* Core Data Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Core Data Models";
+			sourceTree = "<group>";
+		};
 		057ACAFD23ED480D00C0CBE5 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +108,7 @@
 		057ACB2423ED48B600C0CBE5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0515AAF623EE47050036DCED /* Core Data Models */,
 				057ACB2223ED485D00C0CBE5 /* room.swift */,
 				057ACB2523ED48E400C0CBE5 /* photo.swift */,
 				057ACB2723ED493C00C0CBE5 /* floor.swift */,

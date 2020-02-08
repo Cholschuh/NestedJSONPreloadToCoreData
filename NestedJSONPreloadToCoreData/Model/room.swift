@@ -10,7 +10,6 @@ import Foundation
 
 struct room: Codable {
     var name: String
-    var floor: String
     var information: String
     var beaconMinorVal: String?
     var beaconMajorVal: String?
