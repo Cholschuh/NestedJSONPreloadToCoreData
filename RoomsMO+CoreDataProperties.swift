@@ -2,7 +2,7 @@
 //  RoomsMO+CoreDataProperties.swift
 //  NestedJSONPreloadToCoreData
 //
-//  Created by Chris Holschuh on 2/8/20.
+//  Created by Chris Holschuh on 2/9/20.
 //  Copyright © 2020 Chris Holschuh. All rights reserved.
 //
 //
@@ -22,12 +22,30 @@ extension RoomsMO {
     @NSManaged public var information: String?
     @NSManaged public var name: String?
     @NSManaged public var floor: FloorsMO?
-    @NSManaged public var rawPhotos: NSSet?
+    @NSManaged public var rawPhotos: NSOrderedSet?
 
 }
 
 // MARK: Generated accessors for rawPhotos
 extension RoomsMO {
+
+    @objc(insertObject:inRawPhotosAtIndex:)
+    @NSManaged public func insertIntoRawPhotos(_ value: PhotosMO, at idx: Int)
+
+    @objc(removeObjectFromRawPhotosAtIndex:)
+    @NSManaged public func removeFromRawPhotos(at idx: Int)
+
+    @objc(insertRawPhotos:atIndexes:)
+    @NSManaged public func insertIntoRawPhotos(_ values: [PhotosMO], at indexes: NSIndexSet)
+
+    @objc(removeRawPhotosAtIndexes:)
+    @NSManaged public func removeFromRawPhotos(at indexes: NSIndexSet)
+
+    @objc(replaceObjectInRawPhotosAtIndex:withObject:)
+    @NSManaged public func replaceRawPhotos(at idx: Int, with value: PhotosMO)
+
+    @objc(replaceRawPhotosAtIndexes:withRawPhotos:)
+    @NSManaged public func replaceRawPhotos(at indexes: NSIndexSet, with values: [PhotosMO])
 
     @objc(addRawPhotosObject:)
     @NSManaged public func addToRawPhotos(_ value: PhotosMO)
@@ -36,9 +54,9 @@ extension RoomsMO {
     @NSManaged public func removeFromRawPhotos(_ value: PhotosMO)
 
     @objc(addRawPhotos:)
-    @NSManaged public func addToRawPhotos(_ values: NSSet)
+    @NSManaged public func addToRawPhotos(_ values: NSOrderedSet)
 
     @objc(removeRawPhotos:)
-    @NSManaged public func removeFromRawPhotos(_ values: NSSet)
+    @NSManaged public func removeFromRawPhotos(_ values: NSOrderedSet)
 
 }

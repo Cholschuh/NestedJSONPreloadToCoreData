@@ -94,10 +94,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // gets readable URL
             let dataURL = URL(fileURLWithPath: fileUrl)
             
-            let context = persistentContainer.viewContext
+            let backgroundContext = persistentContainer.newBackgroundContext()
             persistentContainer.viewContext.automaticallyMergesChangesFromParent = true
             
-            context.perform {
+            backgroundContext.perform {
                 var floors = [floor]()
                 let task = URLSession.shared.dataTask(with: dataURL) { (data, response, error) in
                     
@@ -111,20 +111,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         do {
                             floors = try JSONDecoder().decode([floor].self, from: data)
                             for floor in floors{
-                                let floorObj = FloorsMO(context: context)
+                                let floorObj = FloorsMO(context: backgroundContext)
                                 floorObj.name = floor.name
                                 floorObj.mapImage = floor.mapImage
                                 for room in floor.rooms{
-                                    let roomObj = RoomsMO(name: room.name, information: room.information, beaconMajorVal: room.beaconMajorVal, beaconMinorVal: room.beaconMinorVal)
+                                    let roomObj = RoomsMO(context: backgroundContext)
+                                    roomObj.name = room.name
+                                    roomObj.information = room.information
+                                    roomObj.beaconMajorVal = room.beaconMajorVal
+                                    roomObj.beaconMinorVal = room.beaconMinorVal
                                     for photo in room.photos{
-                                        let photoObj = PhotosMO(altText: photo.altText, path: photo.path)
-                                        roomObj!.addToRawPhotos(photoObj!)
+                                        let photoObj = PhotosMO(context: backgroundContext)
+                                        photoObj.altText = photo.altText
+                                        photoObj.path = photo.path
+                                        roomObj.addToRawPhotos(photoObj)
                                     }
-                                    floorObj.addToRawRooms(roomObj!)
-                                    print(floorObj)
+                                    floorObj.addToRawRooms(roomObj)
                                 }
                             }
-                            try context.save()
+                            try backgroundContext.save()
                         }catch {
                             print(error.localizedDescription)
                         }

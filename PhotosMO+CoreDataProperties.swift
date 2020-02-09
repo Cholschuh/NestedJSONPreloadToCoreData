@@ -2,7 +2,7 @@
 //  PhotosMO+CoreDataProperties.swift
 //  NestedJSONPreloadToCoreData
 //
-//  Created by Chris Holschuh on 2/8/20.
+//  Created by Chris Holschuh on 2/9/20.
 //  Copyright © 2020 Chris Holschuh. All rights reserved.
 //
 //
