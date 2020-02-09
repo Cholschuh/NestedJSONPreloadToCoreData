@@ -13,5 +13,5 @@ struct room: Codable {
     var information: String
     var beaconMinorVal: String?
     var beaconMajorVal: String?
-    var photos: [photo]?
+    var photos: [photo]
 }

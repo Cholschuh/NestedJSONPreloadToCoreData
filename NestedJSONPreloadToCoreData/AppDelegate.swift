@@ -94,17 +94,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // gets readable URL
             let dataURL = URL(fileURLWithPath: fileUrl)
             
-            let backgroundContext = persistentContainer.newBackgroundContext()
+            let context = persistentContainer.viewContext
             persistentContainer.viewContext.automaticallyMergesChangesFromParent = true
             
-            backgroundContext.perform {
+            context.perform {
                 var floors = [floor]()
-                //var rooms = [room]()
-                //var photos = [photo]()
                 let task = URLSession.shared.dataTask(with: dataURL) { (data, response, error) in
                     
                     if let error = error {
-                        print(error)
+                        print(error.localizedDescription)
                         return
                     }
                     
@@ -113,32 +111,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         do {
                             floors = try JSONDecoder().decode([floor].self, from: data)
                             for floor in floors{
-                                print(floor.name)
-                                print(floor.mapImage)
+                                let floorObj = FloorsMO(context: context)
+                                floorObj.name = floor.name
+                                floorObj.mapImage = floor.mapImage
                                 for room in floor.rooms{
-                                    print(room.name)
-                                    for photo in room.photos!{
-                                        print(photo.altText)
+                                    let roomObj = RoomsMO(name: room.name, information: room.information, beaconMajorVal: room.beaconMajorVal, beaconMinorVal: room.beaconMinorVal)
+                                    for photo in room.photos{
+                                        let photoObj = PhotosMO(altText: photo.altText, path: photo.path)
+                                        roomObj!.addToRawPhotos(photoObj!)
                                     }
+                                    floorObj.addToRawRooms(roomObj!)
+                                    print(floorObj)
                                 }
-                                //let floorObject = FloorsMO(context: backgroundContext)
-//                                roomObject.name = room.name
-//                                roomObject.floor = room.floor
-//                                roomObject.information = room.information
-//                                roomObject.photo = room.photo
-//                                roomObject.beaconMajorVal = room.beaconMajorVal
-//                                roomObject.beaconMinorVal = room.beaconMinorVal
-//                                roomObject.isVisited = room.isVisited
                             }
-                            //try backgroundContext.save()
-                        } catch {
+                            try context.save()
+                        }catch {
                             print(error.localizedDescription)
                         }
                     }
                     
                 }
                 task.resume()
-                //userDefaults.set(true, forKey: preloadedDataKey)
+                userDefaults.set(true, forKey: preloadedDataKey)
             }
             
         }else{

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		050BA5D223EF44D600912E71 /* PhotosMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050BA5CC23EF44D600912E71 /* PhotosMO+CoreDataClass.swift */; };
+		050BA5D323EF44D600912E71 /* PhotosMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050BA5CD23EF44D600912E71 /* PhotosMO+CoreDataProperties.swift */; };
+		050BA5D423EF44D600912E71 /* RoomsMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050BA5CE23EF44D600912E71 /* RoomsMO+CoreDataClass.swift */; };
+		050BA5D523EF44D600912E71 /* RoomsMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050BA5CF23EF44D600912E71 /* RoomsMO+CoreDataProperties.swift */; };
+		050BA5D623EF44D600912E71 /* FloorsMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050BA5D023EF44D600912E71 /* FloorsMO+CoreDataClass.swift */; };
+		050BA5D723EF44D600912E71 /* FloorsMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050BA5D123EF44D600912E71 /* FloorsMO+CoreDataProperties.swift */; };
 		057ACB0A23ED480D00C0CBE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057ACB0923ED480D00C0CBE5 /* AppDelegate.swift */; };
 		057ACB0C23ED480D00C0CBE5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057ACB0B23ED480D00C0CBE5 /* SceneDelegate.swift */; };
 		057ACB0E23ED480D00C0CBE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057ACB0D23ED480D00C0CBE5 /* ViewController.swift */; };
@@ -22,6 +28,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		050BA5CC23EF44D600912E71 /* PhotosMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotosMO+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		050BA5CD23EF44D600912E71 /* PhotosMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotosMO+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		050BA5CE23EF44D600912E71 /* RoomsMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RoomsMO+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		050BA5CF23EF44D600912E71 /* RoomsMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RoomsMO+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		050BA5D023EF44D600912E71 /* FloorsMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FloorsMO+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		050BA5D123EF44D600912E71 /* FloorsMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FloorsMO+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		057ACB0623ED480D00C0CBE5 /* NestedJSONPreloadToCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NestedJSONPreloadToCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		057ACB0923ED480D00C0CBE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		057ACB0B23ED480D00C0CBE5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +64,12 @@
 		0515AAF623EE47050036DCED /* Core Data Models */ = {
 			isa = PBXGroup;
 			children = (
+				050BA5CC23EF44D600912E71 /* PhotosMO+CoreDataClass.swift */,
+				050BA5CD23EF44D600912E71 /* PhotosMO+CoreDataProperties.swift */,
+				050BA5CE23EF44D600912E71 /* RoomsMO+CoreDataClass.swift */,
+				050BA5CF23EF44D600912E71 /* RoomsMO+CoreDataProperties.swift */,
+				050BA5D023EF44D600912E71 /* FloorsMO+CoreDataClass.swift */,
+				050BA5D123EF44D600912E71 /* FloorsMO+CoreDataProperties.swift */,
 			);
 			path = "Core Data Models";
 			sourceTree = "<group>";
@@ -197,9 +215,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				050BA5D523EF44D600912E71 /* RoomsMO+CoreDataProperties.swift in Sources */,
 				057ACB2623ED48E400C0CBE5 /* photo.swift in Sources */,
+				050BA5D623EF44D600912E71 /* FloorsMO+CoreDataClass.swift in Sources */,
+				050BA5D223EF44D600912E71 /* PhotosMO+CoreDataClass.swift in Sources */,
+				050BA5D323EF44D600912E71 /* PhotosMO+CoreDataProperties.swift in Sources */,
 				057ACB0E23ED480D00C0CBE5 /* ViewController.swift in Sources */,
+				050BA5D723EF44D600912E71 /* FloorsMO+CoreDataProperties.swift in Sources */,
 				057ACB2A23ED49B100C0CBE5 /* CoreDataHelper.swift in Sources */,
+				050BA5D423EF44D600912E71 /* RoomsMO+CoreDataClass.swift in Sources */,
 				057ACB0A23ED480D00C0CBE5 /* AppDelegate.swift in Sources */,
 				057ACB1423ED480D00C0CBE5 /* NestedJSONPreloadToCoreData.xcdatamodeld in Sources */,
 				057ACB0C23ED480D00C0CBE5 /* SceneDelegate.swift in Sources */,

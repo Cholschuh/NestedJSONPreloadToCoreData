@@ -41,7 +41,7 @@
     "mapImage": "Path/to/imagemap",
     "rooms":[
         {
-            "name": "Room 1",
+            "name": "Room 1 Floor2",
             "information": ".....",
             "beaconMinorVal": "",
             "beaconMajorVal": "",
@@ -63,11 +63,11 @@
             "beaconMajorVal": "",
             "photos":[
                 {
-                    "path": "path/to/photo",
+                    "path": "path/to/photo Room 2",
                     "altText": "This is a photo of the room 2"
                 },
                 {
-                    "path": "path/to/photo",
+                    "path": "path/to/photo Room 2",
                     "altText": "This is a photo of the room 2 partner logo "
                 }
             ]

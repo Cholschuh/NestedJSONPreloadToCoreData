@@ -22,7 +22,6 @@ class coreDataHelper: NSObject {
     class func recordVistedLoc(name: String)-> Bool{
         do {
             let context = getContext()
-            //let entity =  NSEntityDescription.entity(forEntityName: "VistedRoomsMO", in: context)
             let vistedRooms = VisitedRoomsMO(context: context)
             vistedRooms.name = name
             try context.save()
@@ -39,13 +38,16 @@ class coreDataHelper: NSObject {
         
         do {
             try context.execute(deleteAllRequest)
-            try context.save()
             return true
         }catch{
             print (error.localizedDescription)
             return false
         }
+    }
+    
+    class func fetchRecord () -> Bool{
         
+       return true
     }
     
 }

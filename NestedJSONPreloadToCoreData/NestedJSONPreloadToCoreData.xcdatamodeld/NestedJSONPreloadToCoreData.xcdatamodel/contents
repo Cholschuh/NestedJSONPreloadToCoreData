@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="FloorsMO" representedClassName="FloorsMO" syncable="YES" codeGenerationType="class">
+    <entity name="FloorsMO" representedClassName="FloorsMO" syncable="YES">
         <attribute name="mapImage" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <relationship name="rooms" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="RoomsMO" inverseName="floor" inverseEntity="RoomsMO"/>
+        <relationship name="rawRooms" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="RoomsMO" inverseName="floor" inverseEntity="RoomsMO"/>
     </entity>
-    <entity name="PhotosMO" representedClassName="PhotosMO" syncable="YES" codeGenerationType="class">
+    <entity name="PhotosMO" representedClassName="PhotosMO" syncable="YES">
         <attribute name="altText" optional="YES" attributeType="String"/>
         <attribute name="path" optional="YES" attributeType="String"/>
-        <relationship name="room" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RoomsMO" inverseName="photos" inverseEntity="RoomsMO"/>
+        <relationship name="room" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RoomsMO" inverseName="rawPhotos" inverseEntity="RoomsMO"/>
     </entity>
-    <entity name="RoomsMO" representedClassName="RoomsMO" syncable="YES" codeGenerationType="class">
+    <entity name="RoomsMO" representedClassName="RoomsMO" syncable="YES">
         <attribute name="beaconMajorVal" optional="YES" attributeType="String"/>
         <attribute name="beaconMinorVal" optional="YES" attributeType="String"/>
         <attribute name="information" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <relationship name="floor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FloorsMO" inverseName="rooms" inverseEntity="FloorsMO"/>
-        <relationship name="photos" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PhotosMO" inverseName="room" inverseEntity="PhotosMO"/>
+        <relationship name="floor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FloorsMO" inverseName="rawRooms" inverseEntity="FloorsMO"/>
+        <relationship name="rawPhotos" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PhotosMO" inverseName="room" inverseEntity="PhotosMO"/>
     </entity>
     <entity name="VisitedRoomsMO" representedClassName="VisitedRoomsMO" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="FloorsMO" positionX="-36" positionY="9" width="128" height="88"/>
+        <element name="FloorsMO" positionX="-101.40234375" positionY="-76.796875" width="128" height="88"/>
         <element name="PhotosMO" positionX="-18" positionY="27" width="128" height="88"/>
-        <element name="RoomsMO" positionX="-54" positionY="0" width="128" height="133"/>
-        <element name="VisitedRoomsMO" positionX="-63" positionY="-18" width="128" height="58"/>
+        <element name="RoomsMO" positionX="-457.71875" positionY="-1.94140625" width="128" height="133"/>
+        <element name="VisitedRoomsMO" positionX="-243.16796875" positionY="-126.75" width="128" height="58"/>
     </elements>
 </model>
