@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         // add a record to rooms visted
-        coreDataHelper.recordVisitedLoc(name: "pat's Room")
+        coreDataHelper.recordVisitedLoc(name: "Chris's Room")
         
         // Creates a VisitedRoomsMO Object Array
         var visitedRooms: [VisitedRoomsMO] = []
@@ -25,7 +25,8 @@ class ViewController: UIViewController {
         for room in visitedRooms {
             print(room.name!)
         }
-        print(coreDataHelper.roomHasBeenVisited(roomName: "Chris'Room"))
+        print(coreDataHelper.roomHasBeenVisited(roomName: "Chris's Room"))
+        
         //removes all rooms for Visited Rooms
         coreDataHelper.clearAllVisitedLoc()
     }

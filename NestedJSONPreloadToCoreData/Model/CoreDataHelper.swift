@@ -13,12 +13,15 @@ import CoreData
 
 class coreDataHelper: NSObject {
     
+    //provides a context for Appdelegate to the persistent Container
     private class func getContext() -> NSManagedObjectContext{
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.persistentContainer.viewContext
         
     }
     
+    
+    // Create a record in the VistedRoomMO Entity with the room name
     class func recordVisitedLoc(name: String)-> Bool{
         let context = getContext()
         let vistedRooms = VisitedRoomsMO(context: context)
@@ -32,7 +35,7 @@ class coreDataHelper: NSObject {
             return false
         }
     }
-    
+    // Clears all records in the visistedRoomMO data store
     class func clearAllVisitedLoc () -> Bool{
         let context = getContext()
         let deleteAllRequest = NSBatchDeleteRequest(fetchRequest: VisitedRoomsMO.fetchRequest())
@@ -46,7 +49,7 @@ class coreDataHelper: NSObject {
         }
     }
     
-    
+    // Returning an array of VisitedRoomMO Objects fetches all visited room in the VisitedRoomMO data store
     class func fetchAllVisitedRoomsdData() -> [VisitedRoomsMO]{
             let context = getContext()
             var results: [VisitedRoomsMO] = []
@@ -59,7 +62,7 @@ class coreDataHelper: NSObject {
             }
             return results
         }
-    
+    // returns Bool: Searches roomName to detect with room has already been visited
     class func roomHasBeenVisited(roomName: String) -> Bool {
         let context = getContext()
         var records: [VisitedRoomsMO] = []
@@ -68,12 +71,11 @@ class coreDataHelper: NSObject {
         
         do{
             records = try context.fetch(fetch)
-            print(records.count)
             if records.count > 0 {
                 return true
             }
         }catch{
-            print("something went wrong")
+            print("What unable to pull data from VisitedRoomsMO entity. Error " + error.localizedDescription)
         }
     return false
     }
