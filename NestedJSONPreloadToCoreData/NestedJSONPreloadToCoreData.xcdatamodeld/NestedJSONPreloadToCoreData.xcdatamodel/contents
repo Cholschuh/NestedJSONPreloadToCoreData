@@ -18,7 +18,7 @@
         <relationship name="floor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FloorsMO" inverseName="rawRooms" inverseEntity="FloorsMO"/>
         <relationship name="rawPhotos" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="PhotosMO" inverseName="room" inverseEntity="PhotosMO"/>
     </entity>
-    <entity name="VisitedRoomsMO" representedClassName="VisitedRoomsMO" syncable="YES" codeGenerationType="class">
+    <entity name="VisitedRoomsMO" representedClassName="VisitedRoomsMO" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
     <elements>

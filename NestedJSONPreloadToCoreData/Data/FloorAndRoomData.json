@@ -1,5 +1,5 @@
 [{
-    "name": "1",
+    "name": "Floor 1",
     "mapImage": "Path/to/imagemap",
     "rooms":[
         {
@@ -37,7 +37,7 @@
     ]
 },
 {
-    "name": "2",
+    "name": "Floor 2",
     "mapImage": "Path/to/imagemap",
     "rooms":[
         {
