@@ -13,6 +13,8 @@ import CoreData
 
 class coreDataHelper: NSObject {
     
+    
+    
     //provides a context for Appdelegate to the persistent Container
     private class func getContext() -> NSManagedObjectContext{
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -51,17 +53,17 @@ class coreDataHelper: NSObject {
     
     // Returning an array of VisitedRoomMO Objects fetches all visited room in the VisitedRoomMO data store
     class func fetchAllVisitedRoomsdData() -> [VisitedRoomsMO]{
-            let context = getContext()
-            var results: [VisitedRoomsMO] = []
-            //let fetch = NSFetchRequest<VisitedRoomsMO>(entityName:"VisitedRoomsMO")
-            let fetch = VisitedRoomsMO.createfetchRequest()
-            do{
-                results = try context.fetch(fetch)
-            }catch {
-                print(error.localizedDescription)
-            }
-            return results
+        let context = getContext()
+        var results: [VisitedRoomsMO] = []
+        //let fetch = NSFetchRequest<VisitedRoomsMO>(entityName:"VisitedRoomsMO")
+        let fetch = VisitedRoomsMO.createfetchRequest()
+        do{
+            results = try context.fetch(fetch)
+        }catch {
+            print(error.localizedDescription)
         }
+        return results
+    }
     // returns Bool: Searches roomName to detect with room has already been visited
     class func roomHasBeenVisited(roomName: String) -> Bool {
         let context = getContext()
@@ -77,7 +79,63 @@ class coreDataHelper: NSObject {
         }catch{
             print("What unable to pull data from VisitedRoomsMO entity. Error " + error.localizedDescription)
         }
-    return false
+        return false
     }
+    
+    //--------Floor<->>Rooms<-->>Photos Methods ------
+    
+//    class func getAllFloorObject() -> [FloorsMO]{
+//        let context = getContext()
+//        var results: [FloorsMO] = []
+//        let request = FloorsMO.createfetchRequest()
+//        let sortDescripter = NSSortDescriptor(key: "name", ascending: true)
+//        request.sortDescriptors = [sortDescripter]
+//        do{
+//            results = try context.fetch(request)
+//        }catch{
+//            print(error.localizedDescription)
+//        }
+//        return results
+//    }
+    
+    class func getFloorObject() -> [FloorsMO] {
+        let context = getContext()
+        var floors: [FloorsMO] = []
+        let fetchRequest: NSFetchRequest<FloorsMO> = FloorsMO.createfetchRequest()
+        
+        do{
+          floors = try context.fetch(fetchRequest)
+        }catch{
+            print("Could not pull numbers")
+        }
+        return floors
+    }
+    
+    
+    
+    
+//    class func getAllRooms(){
+//        
+//        let context = getContext()
+//        var floorObj: [FloorsMO] = []
+//        //var fetchedResultsController: NSFetchedResultsController<VisitedRoomsMO>!
+//        let request = FloorsMO.createfetchRequest()
+//        let sort = NSSortDescriptor(key: "rawRooms.name", ascending: true)
+//        request.sortDescriptors = [sort]
+//        request.predicate = NSPredicate(format: "floor.name","Floor 1")
+////        fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: "rawRooms.name", cacheName: nil)
+//        do{
+//           
+//            floorObj = try context.fetch(request)
+//            for floor in floorObj{
+//                print(floor.rawRooms)
+//            }
+//        }catch{
+//            
+//        }
+////
+//        
+//        
+//    }
     
 }

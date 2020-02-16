@@ -25,6 +25,9 @@
 		057ACB2823ED493C00C0CBE5 /* floor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057ACB2723ED493C00C0CBE5 /* floor.swift */; };
 		057ACB2A23ED49B100C0CBE5 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057ACB2923ED49B100C0CBE5 /* CoreDataHelper.swift */; };
 		057ACB2C23ED4C7800C0CBE5 /* FloorAndRoomData.json in Resources */ = {isa = PBXBuildFile; fileRef = 057ACB2B23ED4C7800C0CBE5 /* FloorAndRoomData.json */; };
+		05B49DFB23F9127F0048CE9B /* customFloorsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B49DFA23F9127F0048CE9B /* customFloorsCell.swift */; };
+		05B49DFD23F91FEB0048CE9B /* customRoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B49DFC23F91FEB0048CE9B /* customRoomCell.swift */; };
+		05B49DFF23F9209D0048CE9B /* RoomListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B49DFE23F9209D0048CE9B /* RoomListViewController.swift */; };
 		05F39A6B23F2393900F364D7 /* VisitedRoomsMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F39A6923F2393900F364D7 /* VisitedRoomsMO+CoreDataClass.swift */; };
 		05F39A6C23F2393900F364D7 /* VisitedRoomsMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F39A6A23F2393900F364D7 /* VisitedRoomsMO+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
@@ -50,6 +53,9 @@
 		057ACB2723ED493C00C0CBE5 /* floor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = floor.swift; sourceTree = "<group>"; };
 		057ACB2923ED49B100C0CBE5 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		057ACB2B23ED4C7800C0CBE5 /* FloorAndRoomData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FloorAndRoomData.json; sourceTree = "<group>"; };
+		05B49DFA23F9127F0048CE9B /* customFloorsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customFloorsCell.swift; sourceTree = "<group>"; };
+		05B49DFC23F91FEB0048CE9B /* customRoomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customRoomCell.swift; sourceTree = "<group>"; };
+		05B49DFE23F9209D0048CE9B /* RoomListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListViewController.swift; sourceTree = "<group>"; };
 		05F39A6923F2393900F364D7 /* VisitedRoomsMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VisitedRoomsMO+CoreDataClass.swift"; sourceTree = "<group>"; };
 		05F39A6A23F2393900F364D7 /* VisitedRoomsMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VisitedRoomsMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				057ACB0D23ED480D00C0CBE5 /* ViewController.swift */,
+				05B49DFE23F9209D0048CE9B /* RoomListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -137,6 +144,8 @@
 				057ACB2523ED48E400C0CBE5 /* photo.swift */,
 				057ACB2723ED493C00C0CBE5 /* floor.swift */,
 				057ACB2923ED49B100C0CBE5 /* CoreDataHelper.swift */,
+				05B49DFA23F9127F0048CE9B /* customFloorsCell.swift */,
+				05B49DFC23F91FEB0048CE9B /* customRoomCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -223,11 +232,14 @@
 			files = (
 				050BA5D523EF44D600912E71 /* RoomsMO+CoreDataProperties.swift in Sources */,
 				05F39A6C23F2393900F364D7 /* VisitedRoomsMO+CoreDataProperties.swift in Sources */,
+				05B49DFB23F9127F0048CE9B /* customFloorsCell.swift in Sources */,
 				057ACB2623ED48E400C0CBE5 /* photo.swift in Sources */,
 				050BA5D623EF44D600912E71 /* FloorsMO+CoreDataClass.swift in Sources */,
+				05B49DFD23F91FEB0048CE9B /* customRoomCell.swift in Sources */,
 				050BA5D223EF44D600912E71 /* PhotosMO+CoreDataClass.swift in Sources */,
 				050BA5D323EF44D600912E71 /* PhotosMO+CoreDataProperties.swift in Sources */,
 				057ACB0E23ED480D00C0CBE5 /* ViewController.swift in Sources */,
+				05B49DFF23F9209D0048CE9B /* RoomListViewController.swift in Sources */,
 				050BA5D723EF44D600912E71 /* FloorsMO+CoreDataProperties.swift in Sources */,
 				05F39A6B23F2393900F364D7 /* VisitedRoomsMO+CoreDataClass.swift in Sources */,
 				057ACB2A23ED49B100C0CBE5 /* CoreDataHelper.swift in Sources */,
