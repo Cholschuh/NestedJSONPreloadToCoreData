@@ -18,18 +18,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ///Adds Room to VisitedRoomMO Entity
-        coreDataHelper.recordVisitedLoc(name: "Chris's Room")
+        //coreDataHelper.recordVisitedLoc(name: "Chris's Room")
         ///Call the coreDataHelper to fetch Visited Rooms and Prints them
-        visitedRooms = coreDataHelper.fetchAllVisitedRoomsdData()
-        print(visitedRooms.count)
-        for room in visitedRooms {
-            print(room.name!)
-        }
+        //visitedRooms = coreDataHelper.fetchAllVisitedRoomsdData()
+        //print(visitedRooms.count)
+        //for room in visitedRooms {
+            //print(room.name!)
+        //}
         ///Returns Bool on whether a room has been visited or not
-        print(coreDataHelper.roomHasBeenVisited(roomName: "Chris's Room"))
+        //print(coreDataHelper.roomHasBeenVisited(roomName: "Chris's Room"))
         
         ///removes all rooms for VisitedRoomsMO Entity
-        coreDataHelper.clearAllVisitedLoc()
+        //coreDataHelper.clearAllVisitedLoc()
         
         //print(coreDataHelper.getAllRooms())
     }
@@ -37,7 +37,16 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         floorObjects = coreDataHelper.getFloorObject()
         tableView.reloadData()
+        
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToRoomList" {
+            let destinationVC = segue.destination as! RoomListViewController
+            destinationVC.floorObj = floorObjects[currentIndex]
+        }
+    }
+    
     
 
 }
@@ -61,7 +70,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
          currentIndex = indexPath.row
          tableView.deselectRow(at: indexPath, animated: true)
-         //self.performSegue(withIdentifier: "goTo", sender: self)
+         self.performSegue(withIdentifier: "goToRoomList", sender: self)
      }
 }
 

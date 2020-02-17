@@ -84,25 +84,13 @@ class coreDataHelper: NSObject {
     
     //--------Floor<->>Rooms<-->>Photos Methods ------
     
-//    class func getAllFloorObject() -> [FloorsMO]{
-//        let context = getContext()
-//        var results: [FloorsMO] = []
-//        let request = FloorsMO.createfetchRequest()
-//        let sortDescripter = NSSortDescriptor(key: "name", ascending: true)
-//        request.sortDescriptors = [sortDescripter]
-//        do{
-//            results = try context.fetch(request)
-//        }catch{
-//            print(error.localizedDescription)
-//        }
-//        return results
-//    }
     
     class func getFloorObject() -> [FloorsMO] {
         let context = getContext()
         var floors: [FloorsMO] = []
         let fetchRequest: NSFetchRequest<FloorsMO> = FloorsMO.createfetchRequest()
-        
+        let sortDescripter = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescripter]
         do{
           floors = try context.fetch(fetchRequest)
         }catch{
@@ -110,6 +98,7 @@ class coreDataHelper: NSObject {
         }
         return floors
     }
+    
     
     
     
