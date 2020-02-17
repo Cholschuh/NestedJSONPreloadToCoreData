@@ -21,15 +21,19 @@ class RoomDetailsViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        if let roomObj = roomObj{
+                  configureView(roomObj: roomObj)
+              }else{
+                  print("Not able to load room object")
+              }
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if let roomObj = roomObj{
-            configureView(roomObj: roomObj)
-        }else{
-            print("Not able to load room object")
-        }
+//        if let roomObj = roomObj{
+//            configureView(roomObj: roomObj)
+//        }else{
+//            print("Not able to load room object")
+//        }
     }
     
     @IBAction func dismissBtn(_ sender: Any) {
@@ -47,7 +51,6 @@ class RoomDetailsViewController: UIViewController, UIScrollViewDelegate {
             let imageView = UIImageView()
             imageView.contentMode = .scaleToFill
             let imageName: String = roomPhotos[i].path ?? ""
-            print(imageName)
             imageView.image = UIImage(named: roomPhotos[i].path ?? "")
             imageView.accessibilityLabel = roomPhotos[i].altText
             let xPos = CGFloat(i)*self.view.bounds.size.width
